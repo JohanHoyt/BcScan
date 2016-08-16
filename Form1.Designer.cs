@@ -82,6 +82,8 @@
             this.button9 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -362,6 +364,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(714, 61);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(48, 20);
             this.textBox2.TabIndex = 17;
             // 
@@ -369,6 +372,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(714, 83);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(48, 20);
             this.textBox3.TabIndex = 18;
             // 
@@ -376,6 +380,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(714, 105);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(48, 20);
             this.textBox4.TabIndex = 19;
             // 
@@ -383,6 +388,7 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(714, 128);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(48, 20);
             this.textBox5.TabIndex = 20;
             // 
@@ -390,6 +396,7 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(714, 150);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(48, 20);
             this.textBox6.TabIndex = 21;
             // 
@@ -397,6 +404,7 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(768, 150);
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(48, 20);
             this.textBox7.TabIndex = 26;
             // 
@@ -404,6 +412,7 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(768, 128);
             this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(48, 20);
             this.textBox8.TabIndex = 25;
             // 
@@ -411,6 +420,7 @@
             // 
             this.textBox9.Location = new System.Drawing.Point(768, 105);
             this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(48, 20);
             this.textBox9.TabIndex = 24;
             // 
@@ -418,6 +428,7 @@
             // 
             this.textBox10.Location = new System.Drawing.Point(768, 83);
             this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(48, 20);
             this.textBox10.TabIndex = 23;
             // 
@@ -425,6 +436,7 @@
             // 
             this.textBox11.Location = new System.Drawing.Point(768, 61);
             this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(48, 20);
             this.textBox11.TabIndex = 22;
             // 
@@ -502,7 +514,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(581, 186);
+            this.button9.Location = new System.Drawing.Point(578, 196);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(64, 23);
             this.button9.TabIndex = 35;
@@ -521,19 +533,36 @@
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(619, 276);
+            this.label12.Location = new System.Drawing.Point(309, 325);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 13);
+            this.label12.Size = new System.Drawing.Size(48, 43);
             this.label12.TabIndex = 37;
             this.label12.Text = "Detalle de Anaquel";
             this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(581, 169);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(61, 21);
+            this.comboBox1.TabIndex = 38;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(312, 371);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.ReadOnly = true;
+            this.textBox12.Size = new System.Drawing.Size(42, 20);
+            this.textBox12.TabIndex = 39;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 447);
+            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button9);
@@ -573,7 +602,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "BcScan";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -640,6 +670,8 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox12;
     }
 }
 
