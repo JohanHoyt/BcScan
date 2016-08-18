@@ -1,1 +1,9 @@
 c:\users\guille\documents\visual studio 2015\Projects\bcScan\bcScan\bin\Debug\bcScan.exe.config
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\bin\Debug\bcScan.exe
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\bin\Debug\bcScan.pdb
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.csprojResolveAssemblyReference.cache
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.Form1.resources
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.Properties.Resources.resources
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.csproj.GenerateResource.Cache
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.exe
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.pdb
