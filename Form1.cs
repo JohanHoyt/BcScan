@@ -14,9 +14,11 @@ namespace bcScan
     {
         //GLOBALS
         string anaquelPath = @"C:\Database\ListaAnaq.txt";
+        bool isCapturaLoaded = false;
+        int counter = 1;
 
-            //datagridview sources and lists declaration
-            BindingList<Anaquel> anaqueles = new BindingList<Anaquel>();
+        //datagridview sources and lists declaration
+        BindingList<Anaquel> anaqueles = new BindingList<Anaquel>();
             BindingSource bindingSourceAnaquel = new BindingSource();
 
             List<Detalle> detallesList = new List<Detalle>();
@@ -64,60 +66,74 @@ namespace bcScan
         // parse text file listaAnaq y cargar a datagridview
         private void buttonCapturar_Click(object sender, EventArgs e)
         {
-            this.logBox.Text += anaquelPath + "\r\n";
-
-            int counter = 1;
-            string line, anaq, cont;
-
-            // Read the file and display it line by line.
-            System.IO.StreamReader file =
-               new System.IO.StreamReader(anaquelPath);
-            while ((line = file.ReadLine()) != null)
+            if (isCapturaLoaded == false)
             {
-                //parse text file ListaAnaq
-                string[] split = line.Split(',');
-                anaq = split[0];
-                anaq = anaq.Replace("\"", string.Empty);
-                cont = split[1];
-
-                //add into anaqueles binding list
-                anaqueles.Add(new Anaquel
+                if (MessageBox.Show("Desea empezar una nueva captura?", "Nueva Captura", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    anaquel = anaq,
-                    contado = cont,
-                    id = counter
-                });
+                    isCapturaLoaded = true;
+                    this.logBox.Text += anaquelPath + "\r\n";
 
-                //add into detallesList TEST DETALLE
-                for (int i = 0; i <= counter; i++)
-                {
-                    detallesList.Add(new Detalle
+                    
+                    string line, anaq, cont;
+
+                    // Read the file and display it line by line.
+                    System.IO.StreamReader file =
+                       new System.IO.StreamReader(anaquelPath);
+                    while ((line = file.ReadLine()) != null)
                     {
-                        id = counter,
-                        codigo = counter * 3,
-                        cantidad = i * 2
-                    });
+                        //parse text file ListaAnaq
+                        string[] split = line.Split(',');
+                        anaq = split[0];
+                        anaq = anaq.Replace("\"", string.Empty);
+                        cont = split[1];
+
+                        //add into anaqueles binding list
+                        anaqueles.Add(new Anaquel
+                        {
+                            anaquel = anaq,
+                            contado = Int32.Parse(cont),
+                            id = counter
+                        });
+
+                        //add into detallesList TEST DETALLE
+                        for (int i = 0; i <= counter; i++)
+                        {
+                            detallesList.Add(new Detalle
+                            {
+                                id = counter,
+                                codigo = counter * 3,
+                                cantidad = i * 2
+                            });
+                            
+                        }
+
+
+                        //debug log
+                        this.logBox.Text += anaq + cont + "\r\n";
+                        counter++;
+                    }
+
+                    file.Close();
+
+                    //Load into anaqueles gridview
+                    viewAnaqueles.AutoGenerateColumns = false;
+                    bindingSourceAnaquel.DataSource = anaqueles;
+                    viewAnaqueles.DataSource = bindingSourceAnaquel;
+
+                    viewAnaqueles.Columns["Anaquel"].DataPropertyName = "anaquel";
+                    viewAnaqueles.Columns["Contado"].DataPropertyName = "contado";
+
+                    //set event handler for viewAnaqueles gridview
+                    viewAnaqueles.SelectionChanged += new EventHandler(
+                    viewAnaqueles_SelectionChanged);
+                    viewDetalles.CellValueChanged += new DataGridViewCellEventHandler(
+                    viewDetalles_CellValueChanged);
                 }
-
-
-                //debug log
-                this.logBox.Text += anaq + cont + "\r\n";
-                counter++;
             }
-
-            file.Close();
-
-            //Load into anaqueles gridview
-            viewAnaqueles.AutoGenerateColumns = false;
-            bindingSourceAnaquel.DataSource = anaqueles;
-            viewAnaqueles.DataSource = bindingSourceAnaquel;
-
-            viewAnaqueles.Columns["Anaquel"].DataPropertyName = "anaquel";
-            viewAnaqueles.Columns["Contado"].DataPropertyName = "contado";
-
-            //set event handler for selected row
-            viewAnaqueles.SelectionChanged += new EventHandler(
-            viewAnaqueles_SelectionChanged);
+            else
+            {
+                MessageBox.Show("Captura ya iniciada", "Advertencia", MessageBoxButtons.OK);
+            }
         }
 
         // Select row from anaquel gridview when clicked
@@ -128,26 +144,36 @@ namespace bcScan
 
         private void viewAnaqueles_SelectionChanged(object sender, EventArgs e)
         {
-            Anaquel current = (Anaquel)viewAnaqueles.CurrentRow.DataBoundItem;
-            labelDetalleAnaquel.Text = current.anaquel;
-            int idAnaquel = current.id;
 
-            detalles.Clear();
-            foreach(var item in detallesList)
+            //check gridview selection*** note
+
+            DataGridView dgv = sender as DataGridView;
+
+            if (dgv.Name == viewAnaqueles.Name)
             {
-                if(item.id == idAnaquel)
+                Anaquel current = (Anaquel)viewAnaqueles.CurrentRow.DataBoundItem;
+                labelDetalleAnaquel.Text = current.anaquel;
+                int idAnaquel = current.id;
+
+                detalles.Clear();
+                foreach(var item in detallesList)
                 {
-                    detalles.Add(item);
+                    if(item.id == idAnaquel)
+                    {
+                        detalles.Add(item);
+                    }
                 }
+
+                //bind data to viewDetalles gridview
+                viewDetalles.AutoGenerateColumns = false;
+                bindingSourceDetalle.DataSource = detalles;
+                viewDetalles.DataSource = bindingSourceDetalle;
+
+                viewDetalles.Columns["Codigo"].DataPropertyName = "codigo";
+                viewDetalles.Columns["Cant"].DataPropertyName = "cantidad";
             }
 
-            //bind data to viewDetalles gridview
-            viewDetalles.AutoGenerateColumns = false;
-            bindingSourceDetalle.DataSource = detalles;
-            viewDetalles.DataSource = bindingSourceDetalle;
-
-            viewDetalles.Columns["Codigo"].DataPropertyName = "codigo";
-            viewDetalles.Columns["Cant"].DataPropertyName = "cantidad";
+                
 
         }
 
@@ -156,5 +182,42 @@ namespace bcScan
 
         }
 
+        // data grid view edited.
+        //talvez no es necesario
+        private void viewDetalles_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+            //detalle currentdetalle = (detalle)viewdetalles.currentrow.databounditem;
+            //int iddetalle = currentdetalle.id;
+            //if (viewdetalles.columns[e.columnindex].name == "cant")
+            //{
+
+            //}
+           
+
+            }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            
+            var saveAnaq = new List<string>();
+            var saveDetalle = new List<string>();
+
+            foreach (var anaq in anaqueles)
+            {
+                saveAnaq.Add(anaq.id.ToString() + "," + anaq.anaquel + "," + anaq.contado.ToString() + "," +
+                    anaq.pistol.ToString() + "," + anaq.status.ToString() + "," + anaq.error);
+            }
+
+            foreach (var detalle in detallesList)
+            {
+                saveDetalle.Add(detalle.id.ToString() + "," + detalle.codigo.ToString() + "," + detalle.cantidad.ToString() + "," +
+                    detalle.error);
+            }
+
+            System.IO.File.WriteAllLines(@"C:\Database\saves\Anaqueles.txt", saveAnaq.ToArray());
+            System.IO.File.WriteAllLines(@"C:\Database\saves\Detalles.txt", saveDetalle.ToArray());
+            MessageBox.Show("Guardado.", "Success", MessageBoxButtons.OK);
+        }
     }
 }

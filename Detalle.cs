@@ -12,5 +12,10 @@ namespace bcScan
         public int codigo { get; set; }
         public int cantidad { get; set; }
         public string error { get; set; }
+
+        public Detalle()
+        {
+            error = "";
+        }
     }
 }

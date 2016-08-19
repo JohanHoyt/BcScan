@@ -69,24 +69,24 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.textAnaqContados = new System.Windows.Forms.TextBox();
+            this.textAnaqPistol = new System.Windows.Forms.TextBox();
+            this.textAnaqError = new System.Windows.Forms.TextBox();
+            this.textAnaqOK = new System.Windows.Forms.TextBox();
+            this.textAnaqOKPercent = new System.Windows.Forms.TextBox();
+            this.textParesOKPercent = new System.Windows.Forms.TextBox();
+            this.textParesOK = new System.Windows.Forms.TextBox();
+            this.textParesError = new System.Windows.Forms.TextBox();
+            this.textParesPistol = new System.Windows.Forms.TextBox();
+            this.textParesContados = new System.Windows.Forms.TextBox();
+            this.buttonOrdenar = new System.Windows.Forms.Button();
+            this.buttonEliminar = new System.Windows.Forms.Button();
+            this.buttonBorrarLog = new System.Windows.Forms.Button();
+            this.buttonRetomar = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.buttonGuardar = new System.Windows.Forms.Button();
+            this.buttonBorrarScanner = new System.Windows.Forms.Button();
+            this.buttonFinManual = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -422,121 +422,121 @@
             this.label11.TabIndex = 16;
             this.label11.Text = "Anaqueles";
             // 
-            // textBox2
+            // textAnaqContados
             // 
-            this.textBox2.Location = new System.Drawing.Point(714, 82);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(48, 20);
-            this.textBox2.TabIndex = 17;
+            this.textAnaqContados.Location = new System.Drawing.Point(714, 82);
+            this.textAnaqContados.Name = "textAnaqContados";
+            this.textAnaqContados.ReadOnly = true;
+            this.textAnaqContados.Size = new System.Drawing.Size(48, 20);
+            this.textAnaqContados.TabIndex = 17;
             // 
-            // textBox3
+            // textAnaqPistol
             // 
-            this.textBox3.Location = new System.Drawing.Point(714, 104);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(48, 20);
-            this.textBox3.TabIndex = 18;
+            this.textAnaqPistol.Location = new System.Drawing.Point(714, 104);
+            this.textAnaqPistol.Name = "textAnaqPistol";
+            this.textAnaqPistol.ReadOnly = true;
+            this.textAnaqPistol.Size = new System.Drawing.Size(48, 20);
+            this.textAnaqPistol.TabIndex = 18;
             // 
-            // textBox4
+            // textAnaqError
             // 
-            this.textBox4.Location = new System.Drawing.Point(714, 126);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(48, 20);
-            this.textBox4.TabIndex = 19;
+            this.textAnaqError.Location = new System.Drawing.Point(714, 126);
+            this.textAnaqError.Name = "textAnaqError";
+            this.textAnaqError.ReadOnly = true;
+            this.textAnaqError.Size = new System.Drawing.Size(48, 20);
+            this.textAnaqError.TabIndex = 19;
             // 
-            // textBox5
+            // textAnaqOK
             // 
-            this.textBox5.Location = new System.Drawing.Point(714, 149);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(48, 20);
-            this.textBox5.TabIndex = 20;
+            this.textAnaqOK.Location = new System.Drawing.Point(714, 149);
+            this.textAnaqOK.Name = "textAnaqOK";
+            this.textAnaqOK.ReadOnly = true;
+            this.textAnaqOK.Size = new System.Drawing.Size(48, 20);
+            this.textAnaqOK.TabIndex = 20;
             // 
-            // textBox6
+            // textAnaqOKPercent
             // 
-            this.textBox6.Location = new System.Drawing.Point(714, 171);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(48, 20);
-            this.textBox6.TabIndex = 21;
+            this.textAnaqOKPercent.Location = new System.Drawing.Point(714, 171);
+            this.textAnaqOKPercent.Name = "textAnaqOKPercent";
+            this.textAnaqOKPercent.ReadOnly = true;
+            this.textAnaqOKPercent.Size = new System.Drawing.Size(48, 20);
+            this.textAnaqOKPercent.TabIndex = 21;
             // 
-            // textBox7
+            // textParesOKPercent
             // 
-            this.textBox7.Location = new System.Drawing.Point(768, 171);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(48, 20);
-            this.textBox7.TabIndex = 26;
+            this.textParesOKPercent.Location = new System.Drawing.Point(768, 171);
+            this.textParesOKPercent.Name = "textParesOKPercent";
+            this.textParesOKPercent.ReadOnly = true;
+            this.textParesOKPercent.Size = new System.Drawing.Size(48, 20);
+            this.textParesOKPercent.TabIndex = 26;
             // 
-            // textBox8
+            // textParesOK
             // 
-            this.textBox8.Location = new System.Drawing.Point(768, 149);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(48, 20);
-            this.textBox8.TabIndex = 25;
+            this.textParesOK.Location = new System.Drawing.Point(768, 149);
+            this.textParesOK.Name = "textParesOK";
+            this.textParesOK.ReadOnly = true;
+            this.textParesOK.Size = new System.Drawing.Size(48, 20);
+            this.textParesOK.TabIndex = 25;
             // 
-            // textBox9
+            // textParesError
             // 
-            this.textBox9.Location = new System.Drawing.Point(768, 126);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(48, 20);
-            this.textBox9.TabIndex = 24;
+            this.textParesError.Location = new System.Drawing.Point(768, 126);
+            this.textParesError.Name = "textParesError";
+            this.textParesError.ReadOnly = true;
+            this.textParesError.Size = new System.Drawing.Size(48, 20);
+            this.textParesError.TabIndex = 24;
             // 
-            // textBox10
+            // textParesPistol
             // 
-            this.textBox10.Location = new System.Drawing.Point(768, 104);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(48, 20);
-            this.textBox10.TabIndex = 23;
+            this.textParesPistol.Location = new System.Drawing.Point(768, 104);
+            this.textParesPistol.Name = "textParesPistol";
+            this.textParesPistol.ReadOnly = true;
+            this.textParesPistol.Size = new System.Drawing.Size(48, 20);
+            this.textParesPistol.TabIndex = 23;
             // 
-            // textBox11
+            // textParesContados
             // 
-            this.textBox11.Location = new System.Drawing.Point(768, 82);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(48, 20);
-            this.textBox11.TabIndex = 22;
+            this.textParesContados.Location = new System.Drawing.Point(768, 82);
+            this.textParesContados.Name = "textParesContados";
+            this.textParesContados.ReadOnly = true;
+            this.textParesContados.Size = new System.Drawing.Size(48, 20);
+            this.textParesContados.TabIndex = 22;
             // 
-            // button1
+            // buttonOrdenar
             // 
-            this.button1.Location = new System.Drawing.Point(12, 434);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Ordenar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonOrdenar.Location = new System.Drawing.Point(12, 434);
+            this.buttonOrdenar.Name = "buttonOrdenar";
+            this.buttonOrdenar.Size = new System.Drawing.Size(75, 23);
+            this.buttonOrdenar.TabIndex = 27;
+            this.buttonOrdenar.Text = "Ordenar";
+            this.buttonOrdenar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonEliminar
             // 
-            this.button2.Location = new System.Drawing.Point(210, 434);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Location = new System.Drawing.Point(210, 434);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEliminar.TabIndex = 28;
+            this.buttonEliminar.Text = "Eliminar";
+            this.buttonEliminar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonBorrarLog
             // 
-            this.button3.Location = new System.Drawing.Point(699, 432);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 29;
-            this.button3.Text = "Borrar Log";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonBorrarLog.Location = new System.Drawing.Point(699, 432);
+            this.buttonBorrarLog.Name = "buttonBorrarLog";
+            this.buttonBorrarLog.Size = new System.Drawing.Size(75, 23);
+            this.buttonBorrarLog.TabIndex = 29;
+            this.buttonBorrarLog.Text = "Borrar Log";
+            this.buttonBorrarLog.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonRetomar
             // 
-            this.button4.Location = new System.Drawing.Point(309, 193);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(56, 23);
-            this.button4.TabIndex = 30;
-            this.button4.Text = "Retomar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonRetomar.Location = new System.Drawing.Point(309, 193);
+            this.buttonRetomar.Name = "buttonRetomar";
+            this.buttonRetomar.Size = new System.Drawing.Size(56, 23);
+            this.buttonRetomar.TabIndex = 30;
+            this.buttonRetomar.Text = "Retomar";
+            this.buttonRetomar.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -547,32 +547,33 @@
             this.button5.Text = "Iniciar";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonGuardar
             // 
-            this.button6.Location = new System.Drawing.Point(581, 370);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(64, 58);
-            this.button6.TabIndex = 32;
-            this.button6.Text = "Guardar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Location = new System.Drawing.Point(581, 370);
+            this.buttonGuardar.Name = "buttonGuardar";
+            this.buttonGuardar.Size = new System.Drawing.Size(64, 58);
+            this.buttonGuardar.TabIndex = 32;
+            this.buttonGuardar.Text = "Guardar";
+            this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
-            // button7
+            // buttonBorrarScanner
             // 
-            this.button7.Location = new System.Drawing.Point(381, 56);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 33;
-            this.button7.Text = "Borrar Scanner";
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonBorrarScanner.Location = new System.Drawing.Point(381, 56);
+            this.buttonBorrarScanner.Name = "buttonBorrarScanner";
+            this.buttonBorrarScanner.Size = new System.Drawing.Size(75, 23);
+            this.buttonBorrarScanner.TabIndex = 33;
+            this.buttonBorrarScanner.Text = "Borrar Scanner";
+            this.buttonBorrarScanner.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // buttonFinManual
             // 
-            this.button8.Location = new System.Drawing.Point(462, 56);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(98, 23);
-            this.button8.TabIndex = 34;
-            this.button8.Text = "Fin \"Manual\"";
-            this.button8.UseVisualStyleBackColor = true;
+            this.buttonFinManual.Location = new System.Drawing.Point(462, 56);
+            this.buttonFinManual.Name = "buttonFinManual";
+            this.buttonFinManual.Size = new System.Drawing.Size(98, 23);
+            this.buttonFinManual.TabIndex = 34;
+            this.buttonFinManual.Text = "Fin \"Manual\"";
+            this.buttonFinManual.UseVisualStyleBackColor = true;
             // 
             // button9
             // 
@@ -660,24 +661,24 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.buttonFinManual);
+            this.Controls.Add(this.buttonBorrarScanner);
+            this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.buttonRetomar);
+            this.Controls.Add(this.buttonBorrarLog);
+            this.Controls.Add(this.buttonEliminar);
+            this.Controls.Add(this.buttonOrdenar);
+            this.Controls.Add(this.textParesOKPercent);
+            this.Controls.Add(this.textParesOK);
+            this.Controls.Add(this.textParesError);
+            this.Controls.Add(this.textParesPistol);
+            this.Controls.Add(this.textParesContados);
+            this.Controls.Add(this.textAnaqOKPercent);
+            this.Controls.Add(this.textAnaqOK);
+            this.Controls.Add(this.textAnaqError);
+            this.Controls.Add(this.textAnaqPistol);
+            this.Controls.Add(this.textAnaqContados);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -745,24 +746,24 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textAnaqContados;
+        private System.Windows.Forms.TextBox textAnaqPistol;
+        private System.Windows.Forms.TextBox textAnaqError;
+        private System.Windows.Forms.TextBox textAnaqOK;
+        private System.Windows.Forms.TextBox textAnaqOKPercent;
+        private System.Windows.Forms.TextBox textParesOKPercent;
+        private System.Windows.Forms.TextBox textParesOK;
+        private System.Windows.Forms.TextBox textParesError;
+        private System.Windows.Forms.TextBox textParesPistol;
+        private System.Windows.Forms.TextBox textParesContados;
+        private System.Windows.Forms.Button buttonOrdenar;
+        private System.Windows.Forms.Button buttonEliminar;
+        private System.Windows.Forms.Button buttonBorrarLog;
+        private System.Windows.Forms.Button buttonRetomar;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button buttonGuardar;
+        private System.Windows.Forms.Button buttonBorrarScanner;
+        private System.Windows.Forms.Button buttonFinManual;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label12;

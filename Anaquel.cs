@@ -10,13 +10,20 @@ namespace bcScan
 {
     class Anaquel
     {
-        
+
         public int id { get; set; }
         public string anaquel { get; set; }
-        public string contado { get; set; }
-        public string pistol { get; set; }
-        public string status { get; set; }
+        public int contado { get; set; }
+        public int pistol { get; set; }
+        public int status { get; set; }
         public string error { get; set; }
+
+        public Anaquel()
+        {
+            pistol = 0;
+            status = 0;
+            error = "";
+        }
 
 
     }
