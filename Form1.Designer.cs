@@ -83,7 +83,7 @@
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonBorrarLog = new System.Windows.Forms.Button();
             this.buttonRetomar = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonDescargar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonBorrarScanner = new System.Windows.Forms.Button();
             this.buttonFinManual = new System.Windows.Forms.Button();
@@ -538,14 +538,15 @@
             this.buttonRetomar.Text = "Retomar";
             this.buttonRetomar.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // buttonDescargar
             // 
-            this.button5.Location = new System.Drawing.Point(581, 341);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(64, 23);
-            this.button5.TabIndex = 31;
-            this.button5.Text = "Iniciar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonDescargar.Location = new System.Drawing.Point(581, 341);
+            this.buttonDescargar.Name = "buttonDescargar";
+            this.buttonDescargar.Size = new System.Drawing.Size(64, 23);
+            this.buttonDescargar.TabIndex = 31;
+            this.buttonDescargar.Text = "Descargar";
+            this.buttonDescargar.UseVisualStyleBackColor = true;
+            this.buttonDescargar.Click += new System.EventHandler(this.buttonDescargar_Click);
             // 
             // buttonGuardar
             // 
@@ -664,7 +665,7 @@
             this.Controls.Add(this.buttonFinManual);
             this.Controls.Add(this.buttonBorrarScanner);
             this.Controls.Add(this.buttonGuardar);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.buttonDescargar);
             this.Controls.Add(this.buttonRetomar);
             this.Controls.Add(this.buttonBorrarLog);
             this.Controls.Add(this.buttonEliminar);
@@ -760,7 +761,7 @@
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonBorrarLog;
         private System.Windows.Forms.Button buttonRetomar;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonDescargar;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonBorrarScanner;
         private System.Windows.Forms.Button buttonFinManual;

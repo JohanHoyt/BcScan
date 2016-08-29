@@ -7,3 +7,9 @@ C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bc
 C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.csproj.GenerateResource.Cache
 C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.exe
 C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.pdb
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\Interop.CoreScanner.dll
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.csproj.ResolveComReference.cache
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\bin\Debug\Interop.PortableDeviceApiLib.dll
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\bin\Debug\Interop.PortableDeviceTypesLib.dll
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\Interop.PortableDeviceApiLib.dll
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\Interop.PortableDeviceTypesLib.dll

@@ -8,8 +8,8 @@ namespace bcScan
 {
     class Detalle
     {
-        public int id { get; set; }
-        public int codigo { get; set; }
+        public string anaquel { get; set; }
+        public string codigo { get; set; }
         public int cantidad { get; set; }
         public string error { get; set; }
 
