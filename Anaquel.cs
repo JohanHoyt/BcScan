@@ -18,6 +18,14 @@ namespace bcScan
         public int status { get; set; }
         public string error { get; set; }
 
+        public List<Detalle> detalles { get; set; }
+        
+        //public List<Detalle> detalles
+        //{
+        //    get { return detalles; }
+        //    set { detalles = value; }
+        //}
+
         public Anaquel()
         {
             pistol = 0;

@@ -29,7 +29,6 @@ namespace bcScan
         BindingList<Anaquel> anaqueles = new BindingList<Anaquel>();
         BindingSource bindingSourceAnaquel = new BindingSource();
 
-        List<Detalle> detallesList = new List<Detalle>();
         BindingList<Detalle> detalles = new BindingList<Detalle>();
         BindingSource bindingSourceDetalle = new BindingSource();
 
@@ -101,20 +100,9 @@ namespace bcScan
                             anaquel = anaq,
                             contado = Int32.Parse(cont),
                             id = counter,
-                            //pistol = 0
-                        });
-
-                        //add into detallesList TEST DETALLE
-                        //for (int i = 0; i <= counter; i++)
-                        //{
-                        //    detallesList.Add(new Detalle
-                        //    {
-                        //        anaquel = anaq,
-                        //        codigo = (counter * 3).ToString(),
-                        //        cantidad = i * 2
-                        //    });
-                            
-                        //}
+                            detalles = new List<Detalle>()
+                        //pistol = 0
+                    });
 
                         //debug log
                         this.logBox.AppendText(anaq + cont + "\r\n");
@@ -164,14 +152,21 @@ namespace bcScan
                 if(current != null)
                 {
                     labelDetalleAnaquel.Text = current.anaquel;
-
-
+        
                     detalles.Clear();
-                    foreach (var item in detallesList)
+
+                    foreach(var anaquel in anaqueles)
                     {
-                        if (item.anaquel == current.anaquel)
+                        if(anaquel.anaquel == current.anaquel)
                         {
-                            detalles.Add(item);
+                            if (anaquel.detalles != null)
+                            {
+                                foreach (var detalle in anaquel.detalles)
+                                {
+                                    detalles.Add(detalle);
+                                }
+                                break;
+                            }
                         }
                     }
 
@@ -327,7 +322,7 @@ namespace bcScan
                new System.IO.StreamReader(pathInventarioExport);
 
             string currentAnaquel = "";
-            int detallesCount = detallesList.Count();
+            //int detallesCount = detallesList.Count();
             bool matchFound;
 
             while ((line = file.ReadLine()) != null)
@@ -336,7 +331,8 @@ namespace bcScan
 
                 // PARSE export.txt
 
-                if(line.Length >= 15 )
+                //check if blank spaces in export.txt? CORREGIR
+                if(line.Length >= 25 )
                 {
                     break;
                 }
@@ -347,53 +343,53 @@ namespace bcScan
                 }
                 else
                 {
-                    matchFound = false;
-                    if(detallesCount ==0)
+                    foreach(var anaquel in anaqueles)
                     {
-                        this.logBox.AppendText("new added" + "\r\n");
-                        detallesList.Add(new Detalle
+                        if(anaquel.anaquel == currentAnaquel)
                         {
-
-                            anaquel = currentAnaquel,
-                            codigo = line,
-                            cantidad = 1
-                        });
-                        detallesCount++;
-                        matchFound = true;
-                    }
-                    if (matchFound == false)
-                    {
-                        for (int i = 0; i < detallesCount; i++)
-                        {
-                            if (detallesList[i].anaquel == currentAnaquel && detallesList[i].codigo == line)
+                            //if detalles is empty, add
+                            if(anaquel.detalles.Count() == 0)
                             {
-                                this.logBox.AppendText(currentAnaquel + detallesList[i].anaquel + " cantidad mas " + detallesList[i].codigo  + "\r\n");
-                                detallesList[i].cantidad++;
-                                matchFound = true;
+                                anaquel.detalles.Add(new Detalle
+                                {
+                                    anaquel = currentAnaquel,
+                                    codigo = line,
+                                    cantidad = 1
+                                });
                                 break;
                             }
-                        }
-                        if(matchFound == false)
-                        {
-                            this.logBox.AppendText(currentAnaquel + "new added" + line + "\r\n");
-                            detallesList.Add(new Detalle
+                            //if detalles is not empty, check if there is one with same code
+                            matchFound = false;
+                            foreach (var detalle in anaquel.detalles) //allows modifications?
                             {
-
-                                anaquel = currentAnaquel,
-                                codigo = line,
-                                cantidad = 1
-                            });
-                            detallesCount++;
+                                //if there is one, cantidad + 1
+                                if(detalle.codigo == line)
+                                {
+                                    detalle.cantidad++;
+                                    matchFound = true;
+                                    break;
+                                }
+                            }
+                            //if doesn't exist, add
+                            if(matchFound == false)
+                            {
+                                anaquel.detalles.Add(new Detalle
+                                {
+                                    anaquel = currentAnaquel,
+                                    codigo = line,
+                                    cantidad = 1
+                                });
+                            }
                         }
-                    }
+                    } 
                 }
             }
             ////debug
-            this.logBox.AppendText("/////////////" + "\r\n");
-            foreach (var item in detallesList)
-            {
-                this.logBox.AppendText(item.anaquel + item.codigo + item.cantidad + "\r\n");
-            }
+            //this.logBox.AppendText("/////////////" + "\r\n");
+            //foreach (var item in detallesList)
+            //{
+            //    this.logBox.AppendText(item.anaquel + item.codigo + item.cantidad + "\r\n");
+            //}
         }
 
         public void refresh()
@@ -415,25 +411,22 @@ namespace bcScan
                 totalAnaquelesContados++;
                 totalParesContados += anaquel.contado;
 
-                foreach (var detalle in detallesList)
+                if(anaquel.detalles.Count() != 0)
                 {
-                    if(detalle.anaquel == anaquel.anaquel)
-                    {
-                        isAnaquelPistolFound = true;
-                        ParesEnAnaquel = ParesEnAnaquel + detalle.cantidad;
+                    isAnaquelPistolFound = true;
+                    foreach (var detalle in anaquel.detalles)
+                    { 
+                        ParesEnAnaquel += detalle.cantidad;
+                        totalParesPistol += detalle.cantidad;
                     }
-                    
                 }
+                
                 if(isAnaquelPistolFound == true)
                 {
                     totalAnaquelesPistol++;
                 }
+                //set new anaquel.pistol
                 anaquel.pistol = ParesEnAnaquel;
-
-            }
-            foreach (var detalle in detallesList)
-            {
-                totalParesPistol += detalle.cantidad;
             }
 
                 //set new data
