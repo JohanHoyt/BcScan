@@ -8,22 +8,123 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace bcScan.Properties
-{
-
-
+namespace bcScan.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Database\\ListaAnaq.txt")]
+        public string pathListaAnaq {
+            get {
+                return ((string)(this["pathListaAnaq"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("f|F|\\Application\\Inventory\\export.txt")]
+        public string pathInventarioEnScanner {
+            get {
+                return ((string)(this["pathInventarioEnScanner"]));
+            }
+            set {
+                this["pathInventarioEnScanner"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Database\\temp\\export.txt")]
+        public string pathInventarioExport {
+            get {
+                return ((string)(this["pathInventarioExport"]));
+            }
+            set {
+                this["pathInventarioExport"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Database\\")]
+        public string pathGuardarRoot {
+            get {
+                return ((string)(this["pathGuardarRoot"]));
+            }
+            set {
+                this["pathGuardarRoot"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("save.txt")]
+        public string pathGuardarFile {
+            get {
+                return ((string)(this["pathGuardarFile"]));
+            }
+            set {
+                this["pathGuardarFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CodAnaqGuardado.txt")]
+        public string pathResultadosFile {
+            get {
+                return ((string)(this["pathResultadosFile"]));
+            }
+            set {
+                this["pathResultadosFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("autosave.txt")]
+        public string pathAutoGuardarFile {
+            get {
+                return ((string)(this["pathAutoGuardarFile"]));
+            }
+            set {
+                this["pathAutoGuardarFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Database\\temp")]
+        public string pathDescargaTemp {
+            get {
+                return ((string)(this["pathDescargaTemp"]));
+            }
+            set {
+                this["pathDescargaTemp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        public int autoSaveTime {
+            get {
+                return ((int)(this["autoSaveTime"]));
+            }
+            set {
+                this["autoSaveTime"] = value;
             }
         }
     }

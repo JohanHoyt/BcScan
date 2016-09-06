@@ -13,3 +13,6 @@ C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\bin\Debug\In
 C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\bin\Debug\Interop.PortableDeviceTypesLib.dll
 C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\Interop.PortableDeviceApiLib.dll
 C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\Interop.PortableDeviceTypesLib.dll
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.Form2.resources
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.formCargando.resources
+C:\Users\Guille\Documents\Visual Studio 2015\Projects\bcScan\bcScan\obj\Debug\bcScan.Settings.resources

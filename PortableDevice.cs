@@ -180,10 +180,22 @@ namespace bcScan
             tempName = tempName.Substring(4);
             tempName = toAdd + tempName;
 
-
-            var filename = Path.GetFileName(tempName);
+            //string temp = @"Computer\MT2090 - SD4 16011\Application\Inventory\export.txt";
+              var filename = Path.GetFileName(tempName);
             FileStream targetStream = new FileStream(Path.Combine(saveToPath, filename),
                 FileMode.Create, FileAccess.Write);
+
+            //string line;
+            //var save = new List<string>();
+            //System.IO.StreamReader readExport =
+            //   new System.IO.StreamReader(temp);
+            //while ((line = readExport.ReadLine()) != null)
+            //{
+            //    save.Add(line);
+            //}
+
+            //(new FileInfo(saveToPath)).Directory.Create();
+            //System.IO.File.WriteAllLines(saveToPath, save.ToArray());
 
             unsafe
             {

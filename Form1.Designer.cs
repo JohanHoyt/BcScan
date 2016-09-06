@@ -49,14 +49,12 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.viewAnaqueles = new System.Windows.Forms.DataGridView();
             this.Anaquel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pistol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Error = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.viewDetalles = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,19 +83,23 @@
             this.buttonRetomar = new System.Windows.Forms.Button();
             this.buttonDescargar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
-            this.buttonBorrarScanner = new System.Windows.Forms.Button();
-            this.buttonFinManual = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.buttonCargar = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxTienda = new System.Windows.Forms.ComboBox();
             this.labelDetalleAnaquel = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.buttonCapturar = new System.Windows.Forms.ToolStripButton();
+            this.buttonLoadCaptura = new System.Windows.Forms.ToolStripButton();
+            this.buttonSettings = new System.Windows.Forms.ToolStripButton();
             this.logBox = new System.Windows.Forms.TextBox();
+            this.buttonEliminarDetalle = new System.Windows.Forms.Button();
+            this.buttonAgregarDetalle = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.buttonDescargaManual = new System.Windows.Forms.Button();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewAnaqueles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDetalles)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -246,18 +248,11 @@
             this.textBox1.Size = new System.Drawing.Size(216, 20);
             this.textBox1.TabIndex = 3;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(323, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Scanners";
-            // 
             // viewAnaqueles
             // 
+            this.viewAnaqueles.AllowUserToAddRows = false;
+            this.viewAnaqueles.AllowUserToDeleteRows = false;
+            this.viewAnaqueles.AllowUserToOrderColumns = true;
             this.viewAnaqueles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.viewAnaqueles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Anaquel,
@@ -266,6 +261,7 @@
             this.Status,
             this.Error});
             this.viewAnaqueles.Location = new System.Drawing.Point(12, 85);
+            this.viewAnaqueles.MultiSelect = false;
             this.viewAnaqueles.Name = "viewAnaqueles";
             this.viewAnaqueles.Size = new System.Drawing.Size(291, 343);
             this.viewAnaqueles.TabIndex = 5;
@@ -293,31 +289,27 @@
             // 
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             this.Status.Width = 50;
             // 
             // Error
             // 
             this.Error.HeaderText = "Error";
             this.Error.Name = "Error";
+            this.Error.ReadOnly = true;
             this.Error.Width = 50;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(326, 85);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(310, 68);
-            this.dataGridView2.TabIndex = 6;
             // 
             // viewDetalles
             // 
+            this.viewDetalles.AllowUserToAddRows = false;
+            this.viewDetalles.AllowUserToDeleteRows = false;
             this.viewDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.viewDetalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Cant});
-            this.viewDetalles.Location = new System.Drawing.Point(371, 159);
+            this.viewDetalles.Location = new System.Drawing.Point(363, 66);
             this.viewDetalles.Name = "viewDetalles";
-            this.viewDetalles.Size = new System.Drawing.Size(204, 297);
+            this.viewDetalles.Size = new System.Drawing.Size(204, 362);
             this.viewDetalles.TabIndex = 7;
             // 
             // Codigo
@@ -329,6 +321,7 @@
             // 
             this.Cant.HeaderText = "Cant";
             this.Cant.Name = "Cant";
+            this.Cant.Width = 60;
             // 
             // label3
             // 
@@ -405,7 +398,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(581, 174);
+            this.label10.Location = new System.Drawing.Point(582, 179);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 15;
@@ -510,15 +503,17 @@
             this.buttonOrdenar.TabIndex = 27;
             this.buttonOrdenar.Text = "Ordenar";
             this.buttonOrdenar.UseVisualStyleBackColor = true;
+            this.buttonOrdenar.Click += new System.EventHandler(this.buttonOrdenar_Click);
             // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(210, 434);
+            this.buttonEliminar.Location = new System.Drawing.Point(228, 434);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(75, 23);
             this.buttonEliminar.TabIndex = 28;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // buttonBorrarLog
             // 
@@ -528,21 +523,23 @@
             this.buttonBorrarLog.TabIndex = 29;
             this.buttonBorrarLog.Text = "Borrar Log";
             this.buttonBorrarLog.UseVisualStyleBackColor = true;
+            this.buttonBorrarLog.Click += new System.EventHandler(this.buttonBorrarLog_Click);
             // 
             // buttonRetomar
             // 
-            this.buttonRetomar.Location = new System.Drawing.Point(309, 193);
+            this.buttonRetomar.Location = new System.Drawing.Point(166, 434);
             this.buttonRetomar.Name = "buttonRetomar";
             this.buttonRetomar.Size = new System.Drawing.Size(56, 23);
             this.buttonRetomar.TabIndex = 30;
             this.buttonRetomar.Text = "Retomar";
             this.buttonRetomar.UseVisualStyleBackColor = true;
+            this.buttonRetomar.Click += new System.EventHandler(this.buttonRetomar_Click);
             // 
             // buttonDescargar
             // 
-            this.buttonDescargar.Location = new System.Drawing.Point(581, 341);
+            this.buttonDescargar.Location = new System.Drawing.Point(576, 386);
             this.buttonDescargar.Name = "buttonDescargar";
-            this.buttonDescargar.Size = new System.Drawing.Size(64, 23);
+            this.buttonDescargar.Size = new System.Drawing.Size(64, 42);
             this.buttonDescargar.TabIndex = 31;
             this.buttonDescargar.Text = "Descargar";
             this.buttonDescargar.UseVisualStyleBackColor = true;
@@ -550,40 +547,23 @@
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(581, 370);
+            this.buttonGuardar.Location = new System.Drawing.Point(576, 270);
             this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(64, 58);
+            this.buttonGuardar.Size = new System.Drawing.Size(64, 66);
             this.buttonGuardar.TabIndex = 32;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
-            // buttonBorrarScanner
+            // buttonCargar
             // 
-            this.buttonBorrarScanner.Location = new System.Drawing.Point(381, 56);
-            this.buttonBorrarScanner.Name = "buttonBorrarScanner";
-            this.buttonBorrarScanner.Size = new System.Drawing.Size(75, 23);
-            this.buttonBorrarScanner.TabIndex = 33;
-            this.buttonBorrarScanner.Text = "Borrar Scanner";
-            this.buttonBorrarScanner.UseVisualStyleBackColor = true;
-            // 
-            // buttonFinManual
-            // 
-            this.buttonFinManual.Location = new System.Drawing.Point(462, 56);
-            this.buttonFinManual.Name = "buttonFinManual";
-            this.buttonFinManual.Size = new System.Drawing.Size(98, 23);
-            this.buttonFinManual.TabIndex = 34;
-            this.buttonFinManual.Text = "Fin \"Manual\"";
-            this.buttonFinManual.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(578, 217);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(64, 23);
-            this.button9.TabIndex = 35;
-            this.button9.Text = "Cargar";
-            this.button9.UseVisualStyleBackColor = true;
+            this.buttonCargar.Location = new System.Drawing.Point(576, 222);
+            this.buttonCargar.Name = "buttonCargar";
+            this.buttonCargar.Size = new System.Drawing.Size(64, 23);
+            this.buttonCargar.TabIndex = 35;
+            this.buttonCargar.Text = "Cargar";
+            this.buttonCargar.UseVisualStyleBackColor = true;
+            this.buttonCargar.Click += new System.EventHandler(this.buttonCargar_Click);
             // 
             // checkBox1
             // 
@@ -597,24 +577,38 @@
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(309, 346);
+            this.label12.Location = new System.Drawing.Point(309, 270);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 43);
             this.label12.TabIndex = 37;
             this.label12.Text = "Detalle de Anaquel";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // comboBox1
+            // textBoxTienda
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(581, 190);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(61, 21);
-            this.comboBox1.TabIndex = 38;
+            this.textBoxTienda.FormattingEnabled = true;
+            this.textBoxTienda.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.textBoxTienda.Location = new System.Drawing.Point(576, 195);
+            this.textBoxTienda.MaxDropDownItems = 13;
+            this.textBoxTienda.Name = "textBoxTienda";
+            this.textBoxTienda.Size = new System.Drawing.Size(61, 21);
+            this.textBoxTienda.TabIndex = 38;
             // 
             // labelDetalleAnaquel
             // 
-            this.labelDetalleAnaquel.Location = new System.Drawing.Point(312, 392);
+            this.labelDetalleAnaquel.Location = new System.Drawing.Point(312, 316);
             this.labelDetalleAnaquel.Name = "labelDetalleAnaquel";
             this.labelDetalleAnaquel.ReadOnly = true;
             this.labelDetalleAnaquel.Size = new System.Drawing.Size(42, 20);
@@ -623,7 +617,9 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.buttonCapturar});
+            this.buttonCapturar,
+            this.buttonLoadCaptura,
+            this.buttonSettings});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(827, 25);
@@ -636,9 +632,29 @@
             this.buttonCapturar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCapturar.Image")));
             this.buttonCapturar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonCapturar.Name = "buttonCapturar";
-            this.buttonCapturar.Size = new System.Drawing.Size(57, 22);
-            this.buttonCapturar.Text = "Capturar";
+            this.buttonCapturar.Size = new System.Drawing.Size(94, 22);
+            this.buttonCapturar.Text = "Nueva Capturar";
             this.buttonCapturar.Click += new System.EventHandler(this.buttonCapturar_Click);
+            // 
+            // buttonLoadCaptura
+            // 
+            this.buttonLoadCaptura.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.buttonLoadCaptura.Image = ((System.Drawing.Image)(resources.GetObject("buttonLoadCaptura.Image")));
+            this.buttonLoadCaptura.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonLoadCaptura.Name = "buttonLoadCaptura";
+            this.buttonLoadCaptura.Size = new System.Drawing.Size(82, 22);
+            this.buttonLoadCaptura.Text = "Load Captura";
+            this.buttonLoadCaptura.Click += new System.EventHandler(this.buttonLoadCaptura_Click_1);
+            // 
+            // buttonSettings
+            // 
+            this.buttonSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.buttonSettings.Image = ((System.Drawing.Image)(resources.GetObject("buttonSettings.Image")));
+            this.buttonSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(53, 22);
+            this.buttonSettings.Text = "Settings";
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // logBox
             // 
@@ -650,20 +666,59 @@
             this.logBox.Size = new System.Drawing.Size(155, 209);
             this.logBox.TabIndex = 41;
             // 
+            // buttonEliminarDetalle
+            // 
+            this.buttonEliminarDetalle.Location = new System.Drawing.Point(444, 432);
+            this.buttonEliminarDetalle.Name = "buttonEliminarDetalle";
+            this.buttonEliminarDetalle.Size = new System.Drawing.Size(75, 23);
+            this.buttonEliminarDetalle.TabIndex = 42;
+            this.buttonEliminarDetalle.Text = "Eliminar";
+            this.buttonEliminarDetalle.UseVisualStyleBackColor = true;
+            this.buttonEliminarDetalle.Click += new System.EventHandler(this.buttonEliminarDetalle_Click);
+            // 
+            // buttonAgregarDetalle
+            // 
+            this.buttonAgregarDetalle.Location = new System.Drawing.Point(363, 432);
+            this.buttonAgregarDetalle.Name = "buttonAgregarDetalle";
+            this.buttonAgregarDetalle.Size = new System.Drawing.Size(75, 23);
+            this.buttonAgregarDetalle.TabIndex = 43;
+            this.buttonAgregarDetalle.Text = "Agregar";
+            this.buttonAgregarDetalle.UseVisualStyleBackColor = true;
+            this.buttonAgregarDetalle.Click += new System.EventHandler(this.buttonAgregarDetalle_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // buttonDescargaManual
+            // 
+            this.buttonDescargaManual.Location = new System.Drawing.Point(554, 434);
+            this.buttonDescargaManual.Name = "buttonDescargaManual";
+            this.buttonDescargaManual.Size = new System.Drawing.Size(114, 23);
+            this.buttonDescargaManual.TabIndex = 44;
+            this.buttonDescargaManual.Text = "Descarga Manual";
+            this.buttonDescargaManual.UseVisualStyleBackColor = true;
+            this.buttonDescargaManual.Click += new System.EventHandler(this.buttonDescargaManual_Click);
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 464);
+            this.Controls.Add(this.buttonDescargaManual);
+            this.Controls.Add(this.buttonAgregarDetalle);
+            this.Controls.Add(this.buttonEliminarDetalle);
             this.Controls.Add(this.logBox);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.labelDetalleAnaquel);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBoxTienda);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.buttonFinManual);
-            this.Controls.Add(this.buttonBorrarScanner);
+            this.Controls.Add(this.buttonCargar);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.buttonDescargar);
             this.Controls.Add(this.buttonRetomar);
@@ -690,9 +745,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.viewDetalles);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.viewAnaqueles);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
@@ -703,7 +756,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewAnaqueles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDetalles)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -734,9 +786,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView viewAnaqueles;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView viewDetalles;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -763,12 +813,10 @@
         private System.Windows.Forms.Button buttonRetomar;
         private System.Windows.Forms.Button buttonDescargar;
         private System.Windows.Forms.Button buttonGuardar;
-        private System.Windows.Forms.Button buttonBorrarScanner;
-        private System.Windows.Forms.Button buttonFinManual;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button buttonCargar;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox textBoxTienda;
         private System.Windows.Forms.TextBox labelDetalleAnaquel;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.TextBox logBox;
@@ -778,8 +826,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Pistol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Error;
+        private System.Windows.Forms.Button buttonEliminarDetalle;
+        private System.Windows.Forms.Button buttonAgregarDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cant;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button buttonDescargaManual;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.ToolStripButton buttonLoadCaptura;
+        private System.Windows.Forms.ToolStripButton buttonSettings;
     }
 }
 

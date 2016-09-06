@@ -15,10 +15,10 @@ namespace bcScan
         public string anaquel { get; set; }
         public int contado { get; set; }
         public int pistol { get; set; }
-        public int status { get; set; }
+        public string status { get; set; }
         public string error { get; set; }
 
-        public List<Detalle> detalles { get; set; }
+        public BindingList<Detalle> detalles { get; set; }
         
         //public List<Detalle> detalles
         //{
@@ -29,10 +29,13 @@ namespace bcScan
         public Anaquel()
         {
             pistol = 0;
-            status = 0;
+            status = "";
             error = "";
         }
 
-
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

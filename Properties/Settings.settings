@@ -1,7 +1,33 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="bcScan.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="pathListaAnaq" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Database\ListaAnaq.txt</Value>
+    </Setting>
+    <Setting Name="pathInventarioEnScanner" Type="System.String" Scope="User">
+      <Value Profile="(Default)">f|F|\Application\Inventory\export.txt</Value>
+    </Setting>
+    <Setting Name="pathInventarioExport" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Database\temp\export.txt</Value>
+    </Setting>
+    <Setting Name="pathGuardarRoot" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Database\</Value>
+    </Setting>
+    <Setting Name="pathGuardarFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">save.txt</Value>
+    </Setting>
+    <Setting Name="pathResultadosFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CodAnaqGuardado.txt</Value>
+    </Setting>
+    <Setting Name="pathAutoGuardarFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">autosave.txt</Value>
+    </Setting>
+    <Setting Name="pathDescargaTemp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Database\temp</Value>
+    </Setting>
+    <Setting Name="autoSaveTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">60</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

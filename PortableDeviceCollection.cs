@@ -18,7 +18,7 @@ namespace bcScan
             this._deviceManager = new PortableDeviceManager();
         }
 
-        public void Refresh()
+        public bool Refresh()
         {
             this._deviceManager.RefreshDeviceList();
 
@@ -36,11 +36,13 @@ namespace bcScan
             catch (System.IndexOutOfRangeException e)
             {
                 MessageBox.Show("Scanner no conectado", "Advertencia", MessageBoxButtons.OK);
+                return false;
             }
             foreach (var deviceId in deviceIds)
             {
                 Add(new PortableDevice(deviceId));
             }
+            return true;
         }
 
 
