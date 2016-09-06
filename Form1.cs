@@ -299,7 +299,7 @@ namespace bcScan
                     if (item.Id == Properties.Settings.Default.pathInventarioEnScanner)
                     {
                         isPathFound = true;
-                        this.logBox.AppendText("found export.txt" + "\r\n");
+                        this.logBox.AppendText("found export.txt in: " + item.Id + "\r\n");
                         (new FileInfo(Properties.Settings.Default.pathDescargaTemp)).Directory.Create();
                         //close?
                         device.DownloadFile((PortableDeviceFile)item, Properties.Settings.Default.pathDescargaTemp);
@@ -516,7 +516,7 @@ namespace bcScan
                 {
                     if(anaquel.pistol != 0)
                     {
-                        anaquel.error = "Conteo"; //lo pistoleado no es igual a lo contado
+                        anaquel.error = "Pistol"; //lo pistoleado no es igual a lo contado
                         totalAnaquelesError++; //agregar a total de anaqueles con error
                     }
                 }
@@ -670,7 +670,7 @@ namespace bcScan
                         }
                     }
                 }
-                refresh();
+                //refresh();
             }
             catch
             { }
